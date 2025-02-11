@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #030303f5;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 100px;
+  background-color: #000000;
+  color: black;
+}
+
+.btns {
+  display: flex;
+  gap: 20px;
+}
+.profile {
+  margin-top: 10px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+label {
+  color: white;
+}
+
+input,
+textarea {
+  border-radius: 10px;
+  display: flex;
+  padding: 10px;
+  width: 450px;
+  background-color: #212121;
+  border: none;
+  color: #dbdbdb;
+}
+
+input,
+textarea,
+button {
+  margin: 10px 0;
+  padding: 12px;
+  font-size: 18px;
+}
+
+.contact {
+  position: relative;
+  min-height: 100vh;
+  padding: 200px;
+}
+
+.contt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#contact h1 {
+  margin-left: 200px;
+  color: white;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+
+.button-cntct {
+  width: 450px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(90deg, #ff0000, #4e0000);
+  color: white;
+  transition: 0.6s;
+  cursor: pointer;
+}
+
+.button-cntct:hover {
+  background: linear-gradient(90deg, #4e0000, #ff0000);
+}
+
+.left-image img {
+  height: 450px;
+  width: 100%;
+  border-radius: 15px;
+}

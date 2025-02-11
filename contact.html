@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visit Taraz</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="stylle.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo"><a href="#">TraWell</a></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+
+          <li><a href="stay.html">Stay</a></li>
+          <li><a href="visit.html">Visit</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="btns">
+        <button class="profile">
+          <i class="fa-solid fa-user"></i>
+        </button>
+        <button id="logout">Logout <i class="fas fa-sign-out-alt"></i></button>
+      </div>
+    </header>
+
+    <section id="contact">
+      <div class="contt">
+        <div class="contact">
+          <div class="left-image">
+            <img src="assets/1 (1).jpg" alt="Contact Image" />
+          </div>
+          <div>
+            <form action="">
+              <label for="fullName">ФИО:</label>
+              <input
+                type="text"
+                id="fullName"
+                placeholder="Mark Zuckerberg"
+                required
+              />
+
+              <label for="email_id">Почта:</label>
+              <input
+                type="email"
+                id="email_id"
+                placeholder="example@gmail.com"
+                required
+              />
+
+              <label for="text">Сообщение:</label>
+              <input
+                type="text"
+                id="message"
+                placeholder="Lorem ipsum dolor sit ametx"
+                required
+              />
+
+              <button class="button-cntct" onclick="sendMail()">
+                Отпарвить
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p class="f">
+        &copy; 2025 TraWell. All rights reserved. |
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+      </p>
+    </footer>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+
+    <script>
+      window.chatbaseConfig = {
+        chatbotId: "nDvEds5HvWPxPbT_h8IUB",
+        openChatByDefault: false,
+      };
+    </script>
+    <script
+      src="https://www.chatbase.co/embed.min.js"
+      chatbotId="nDvEds5HvWPxPbT_h8IUB"
+      defer
+    ></script>
+
+    <script>
+      (function () {
+        emailjs.init("0ELYbxJSfdI0D1o3L");
+      })();
+
+      function sendMail() {
+        const parameters = {
+          from_name: document.getElementById("fullName").value,
+          email_id: document.getElementById("email_id").value,
+          number: document.getElementById("message").value,
+        };
+
+        emailjs
+          .send("service_z71vyvr", "template_5l7u0ig", parameters)
+          .then(function (response) {
+            alert("Success! Email sent: " + response.status);
+          })
+          .catch(function (error) {
+            alert("Failed to send email. Please try again.");
+            console.error("EmailJS Error:", error);
+          });
+      }
+    </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
